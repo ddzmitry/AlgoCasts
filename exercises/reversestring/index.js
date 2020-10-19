@@ -24,7 +24,7 @@ function reverse3(str) {
         return character + reversed 
    },'')
  } 
-console.log( reverse3("Hello"))
+console.log(reverse3("Hello"))
 
 
 module.exports = reverse;
