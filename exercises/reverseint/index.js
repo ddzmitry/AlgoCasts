@@ -22,4 +22,13 @@ function reverseInt(int) {
 
 }
 
+function reverseInt2(int) {
+
+    const reversed = 
+    int.toString().split('').reverse().join('');
+
+    return parseInt(reversed) * Math.sign(int)
+
+}
+
 module.exports = reverseInt;
