@@ -6,7 +6,7 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-
+    // maxChar("abcccccccd") === "c"
     let a = str.toString().split("").reduce((obj,char) => {
         // Key {a : 1 ,b:1,c:7}
         if(!obj[char]){
@@ -17,7 +17,7 @@ function maxChar(str) {
         }
         return obj
     },{})
-    
+
      // Key {a : 1 ,b:1,c:7}
      // keys [a,b,c,d]
      return Object.keys(a).reduce((x,y)=> {
@@ -29,6 +29,27 @@ function maxChar(str) {
         }
     })
 
+}
+
+function maxChar2(str) {
+    const chars = {};
+    let max = 0;
+    let maxChar = '';
+
+    for (let char of string) {
+        // if false then 1 else ++
+        chars[char] = chars[char] + 1 || 1
+    }
+
+    for (let char in chars){
+        // char is a key
+        if(chars[char] > max) {
+            max = chars[char];
+            maxChar = char;
+        }
+    }
+
+    return maxChar;
 }
 
 module.exports = maxChar;
