@@ -11,7 +11,7 @@
 function anagrams(stringA, stringB) {
 
     function stringify(string){
-        // to json string for comparacing
+        // to json string for comparaci ng
         return JSON.stringify(
         // remove all junk characters
         string.replace(/[^\w]/g,"").toLowerCase().split('')
