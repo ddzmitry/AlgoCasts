@@ -35,6 +35,37 @@ array.map((x,y) => {
 return chunked
 }
 
-function chunk2(array, size) {}
+function chunk2(array, size) {
+    let chunked = []
+
+    for (let element of array){
+        // get last element of inner array
+        const last = chunked[chunked.length -1]
+        // if its not exists , or its already size of chunk that is needed 
+        // create new array and put to array
+        if (!last || last.length == size){
+            chunked.push([element])
+        } else {
+            // else just add to array at the end
+            last.push(element)
+        }
+    }
+    return chunked;
+}
+
+function chunk3(array, size) {
+    // using array slice
+    let chunked = []
+    let index = 0
+
+    while(index < array.length){
+        // slice array 
+        // slice [1,2,3,4].slice(0,3) [1,2,3]
+        chunked.push(array.slice(index,index + size));
+        index += size;
+
+    }
+    return chunked;
+}
 
 module.exports = chunk;

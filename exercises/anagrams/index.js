@@ -9,7 +9,32 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    
+
+    function stringify(string){
+        // to json string for comparacing
+        return JSON.stringify(
+        // remove all junk characters
+        string.replace(/[^\w]/g,"").toLowerCase().split('')
+        // sort the array
+        .sort()
+        // reduce to map {"h" : 1 , "e" : 1 , "l" : 2 , "o" : 1}
+        .reduce((map,char) => {
+        if(map[char]){
+            map[char] ++
+        } else {
+            map[char] = 1
+        }
+        return map
+        },{})
+        )
+
+    }
+
+    return (stringify(stringA) == stringify(stringB) )
+
+
+
+
 }
 
 module.exports = anagrams;
