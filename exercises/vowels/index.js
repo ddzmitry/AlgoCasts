@@ -12,5 +12,10 @@ function vowels(str) {
 let vowels_ = ['a','e','i','o','u']
 return str.split('').filter(x => vowels_.includes(x)).length
 }
+function vowels2(str) {
+    const matches = str.match(/[aeiou]/gi)
+    return matches ? matches.length : 0
+}
+    
 
 module.exports = vowels;
